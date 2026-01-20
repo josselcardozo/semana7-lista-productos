@@ -1,11 +1,27 @@
+// Arreglo de productos
 const productos = [
-    { nombre: "Laptop", precio: 850, descripcion: "Laptop para estudio" },
-    { nombre: "Mouse", precio: 15, descripcion: "Mouse inalámbrico" },
-    { nombre: "Teclado", precio: 25, descripcion: "Teclado básico" }
+    {
+        nombre: "Laptop",
+        precio: 850,
+        descripcion: "Laptop para uso académico"
+    },
+    {
+        nombre: "Mouse",
+        precio: 15,
+        descripcion: "Mouse inalámbrico"
+    },
+    {
+        nombre: "Teclado",
+        precio: 25,
+        descripcion: "Teclado básico"
+    }
 ];
 
+// Referencias al DOM
 const lista = document.getElementById("lista-productos");
+const boton = document.getElementById("btn-agregar");
 
+// Función para renderizar productos
 function renderizarProductos() {
     lista.innerHTML = "";
 
@@ -20,13 +36,16 @@ function renderizarProductos() {
     });
 }
 
+// Renderizar al cargar la página
 renderizarProductos();
 
-document.getElementById("btn-agregar").addEventListener("click", () => {
+// Evento para agregar producto
+boton.addEventListener("click", () => {
     productos.push({
         nombre: "Producto nuevo",
         precio: 10,
         descripcion: "Descripción del producto"
     });
+
     renderizarProductos();
 });
